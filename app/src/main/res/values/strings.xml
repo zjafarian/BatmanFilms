@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">BatmanFilms</string>
+    <string name="app_name">Layout Codelab</string>
+    <string name="singapore_description">Singapore officially the Republic of Singapore, and often referred to as the Lion City, the Garden City, and the Red Dot, is a global city in Southeast Asia and the world\'s only island city-state. It lies one degree (137 km) north of the equator, at the southernmost tip of continental Asia and peninsular Malaysia, with Indonesia\'s Riau Islands to the south. Singapore\'s territory consists of the diamond-shaped main island and 62 islets.</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="fab_content_description">Star FAB</string>
+    <string name="discard">Discard</string>
+    <string name="upload">Upload</string>
+    <string name="camera_settings">ƒ/4 16s ISO 200</string>
+    <string name="settings">Settings</string>
+    <string name="camera">Camera</string>
+    <string name="camera_value">Leica M Typ 240</string>
+    <string name="singapore">Singapore</string>
+    <string name="button_start">start</string>
+    <string name="rent">Rent from R29.99</string>
+    <string name="buy">Buy from R129.99</string>
+    <string name="template_movie_details">March 2017 PG 129 minutes</string>
+    <string name="template_movie_title">Beauty and the Beast</string>
+    <string name="template_movie_genre">Family</string>
+    <string name="template_rotten_tomato_rating">71%</string>
+    <string name="template_similar">Similar</string>
+    <string name="template_movie_description">The story and characters you know and love come to spectacular life in the live-action adaption of Disney\'s animated classic Beauty and the Beast.</string>
+    <string name="template_number_ratings">242 ratings</string>
+    <string name="content_description_add_playlist">Add to watchlist</string>
+    <string name="content_description_poster">Movie Poster Image</string>
+    <string name="content_description_hero_image">Hero Image</string>
+    <string name="email">EMAIL</string>
+    <string name="call">CALL</string>
+    <string name="navigate">NAVIGATE</string>
+
+    <string name="button_end">End</string>
 </resources>
