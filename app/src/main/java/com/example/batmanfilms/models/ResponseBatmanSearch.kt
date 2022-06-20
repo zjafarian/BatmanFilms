@@ -11,7 +11,7 @@ data class ResponseBatmanSearch(
 	val totalResults: String? = null,
 
 	@field:SerializedName("Search")
-	val search: List<SearchItem?>? = null
+	val search: ArrayList<SearchItem>? = null
 )
 
 data class SearchItem(
