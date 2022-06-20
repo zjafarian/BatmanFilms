@@ -1,4 +1,4 @@
-package com.example.batmanfilms.activity
+package com.example.batmanfilms.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
