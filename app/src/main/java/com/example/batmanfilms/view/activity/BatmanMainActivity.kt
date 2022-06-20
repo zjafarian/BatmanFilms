@@ -2,6 +2,7 @@ package com.example.batmanfilms.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.batmanfilms.R
 
 class BatmanMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
