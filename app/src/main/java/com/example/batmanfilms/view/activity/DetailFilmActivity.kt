@@ -5,21 +5,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.batmanfilms.R
-import com.example.batmanfilms.view.fragment.BatmanFragment
+import com.example.batmanfilms.view.fragment.DetailFilmFragment
 
-class BatmanMainActivity : SingleFragmentActivity() {
+class DetailFilmActivity : SingleFragmentActivity() {
+
 
     companion object {
 
-        // this function use BatmanMainActivity by Intent
+        // this function use DetailFilmActivity by Intent
         public fun newIntent(context: Context): Intent {
-            return Intent(context, BatmanMainActivity::class.java)
+            return Intent(context, DetailFilmActivity::class.java)
         }
     }
-
-
     override fun createFragment(): Fragment? {
-       return BatmanFragment.newInstance()
+        return DetailFilmFragment.newInstance()
     }
+
 }

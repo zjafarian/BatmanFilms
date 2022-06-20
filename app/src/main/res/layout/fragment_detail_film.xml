@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_header_image"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="W,16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/header" />
+
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_header_image"
+            app:layout_constraintDimensionRatio="W,25:34"
+            app:layout_constraintStart_toStartOf="@id/gl_left_vertical"
+            app:layout_constraintTop_toBottomOf="@id/iv_header_image"
+            app:srcCompat="@drawable/poster" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_left_vertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <TextView
+            android:id="@+id/tv_movie_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/template_movie_title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toStartOf="@id/iv_bookmark"
+            app:layout_constraintStart_toEndOf="@id/iv_poster"
+            app:layout_constraintTop_toBottomOf="@id/iv_header_image" />
+
+        <TextView
+            android:id="@+id/tv_movie_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+
+            android:layout_marginBottom="8dp"
+            android:text="@string/template_movie_details"
+            app:layout_constraintEnd_toEndOf="@id/gl_right_vertical"
+            app:layout_constraintStart_toStartOf="@id/tv_movie_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_movie_title" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_right_vertical"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+
+        <ImageView
+            android:id="@+id/iv_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/ic_bookmark"
+            app:layout_constraintEnd_toStartOf="@id/gl_right_vertical"
+            app:layout_constraintStart_toEndOf="@id/tv_movie_title"
+            app:layout_constraintTop_toTopOf="@id/tv_movie_title" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/b_horizontal_details"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tv_movie_details,iv_poster" />
+
+        <Button
+            android:id="@+id/b_rent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/rent"
+            app:layout_constraintBottom_toBottomOf="@id/b_horizontal_rent_buy"
+            app:layout_constraintEnd_toStartOf="@id/b_buy"
+            app:layout_constraintStart_toStartOf="@id/gl_left_vertical"
+            app:layout_constraintTop_toBottomOf="@id/b_horizontal_details" />
+
+        <Button
+            android:id="@+id/b_buy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/buy"
+            app:layout_constraintBottom_toBottomOf="@id/b_horizontal_rent_buy"
+            app:layout_constraintEnd_toStartOf="@id/gl_right_vertical"
+            app:layout_constraintStart_toEndOf="@id/b_rent"
+            app:layout_constraintTop_toBottomOf="@id/b_horizontal_details" />
+
+
+        <View
+            android:id="@+id/divider_v"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/divider_gray"
+            app:layout_constraintEnd_toEndOf="@id/gl_right_vertical"
+            app:layout_constraintStart_toStartOf="@id/gl_left_vertical"
+            app:layout_constraintTop_toBottomOf="@id/b_horizontal_rent_buy" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/b_horizontal_rent_buy"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="b_buy,b_rent" />
+
+        <ImageView
+            android:id="@+id/rating_pink"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:src="@color/pink"
+            app:layout_constraintEnd_toStartOf="@id/family"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="@id/gl_left_vertical"
+            app:layout_constraintTop_toBottomOf="@id/divider_v" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="4.5"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/rating_pink"
+            app:layout_constraintEnd_toEndOf="@id/rating_pink"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/rating_pink"
+            app:layout_constraintTop_toTopOf="@id/rating_pink"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/family"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            app:layout_constraintEnd_toStartOf="@id/tomato_rate"
+            app:layout_constraintStart_toEndOf="@id/rating_pink"
+            app:layout_constraintTop_toBottomOf="@id/divider_v"
+            android:src="@drawable/ic_family" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/tomato_rate"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/tomato"
+            app:layout_constraintEnd_toStartOf="@id/dimilarity"
+            app:layout_constraintStart_toEndOf="@id/family"
+            app:layout_constraintTop_toBottomOf="@id/divider_v" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/dimilarity"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/ic_similar"
+            app:layout_constraintEnd_toStartOf="@id/gl_right_vertical"
+            app:layout_constraintStart_toEndOf="@id/tomato_rate"
+            app:layout_constraintTop_toBottomOf="@id/divider_v" />
+
+        <TextView
+            android:id="@+id/tv_pink_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="242 ratings"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/rating_pink"
+            app:layout_constraintStart_toStartOf="@id/rating_pink"
+            app:layout_constraintTop_toBottomOf="@id/rating_pink" />
+
+
+        <TextView
+            android:id="@+id/tv_family"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="family"
+
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/family"
+            app:layout_constraintStart_toStartOf="@id/family"
+            app:layout_constraintTop_toBottomOf="@id/family" />
+
+
+        <TextView
+            android:id="@+id/tv_tomato_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="71%"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/tomato_rate"
+            app:layout_constraintStart_toStartOf="@id/tomato_rate"
+            app:layout_constraintTop_toBottomOf="@id/tomato_rate" />
+
+
+        <TextView
+            android:id="@+id/tv_smilirality"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Similar"
+            android:textAlignment="center"
+
+            app:layout_constraintEnd_toEndOf="@id/dimilarity"
+            app:layout_constraintStart_toStartOf="@id/dimilarity"
+            app:layout_constraintTop_toBottomOf="@id/dimilarity" />
+
+
+        <View
+            android:id="@+id/divider_below_chain"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/divider_gray"
+            app:layout_constraintEnd_toEndOf="@id/gl_right_vertical"
+            app:layout_constraintStart_toStartOf="@id/gl_left_vertical"
+            app:layout_constraintTop_toBottomOf="@id/b_below_chain" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/b_below_chain"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tv_pink_rate,tv_smilirality,tv_tomato_rate,tv_family" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="@string/template_movie_description"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/gl_right_vertical"
+            app:layout_constraintStart_toStartOf="@id/gl_left_vertical"
+            app:layout_constraintTop_toBottomOf="@id/divider_below_chain" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
