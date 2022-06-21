@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.batmanfilms.R
 import com.example.batmanfilms.adapters.BatmanFilmsAdapter
 import com.example.batmanfilms.databinding.FragmentBatmanBinding
+import com.example.batmanfilms.models.SearchItem
 import com.example.batmanfilms.viewmodel.BatmanViewModel
 
 
@@ -49,9 +50,20 @@ class BatmanFragment : Fragment() {
 
         setupAdapter()
         initRecyclerView()
+        listener()
 
 
         return binding.root
+    }
+
+    private fun listener() {
+        batmanAdapter?.onClickFilm(object : BatmanFilmsAdapter.OnClickFilm{
+            override fun onCLickFilm(filmItem: SearchItem) {
+
+
+            }
+
+        })
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

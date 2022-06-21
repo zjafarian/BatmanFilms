@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.batmanfilms.R
 
+private const val ARG_IMDB_ID = "ImdbID"
+
 
 class DetailFilmFragment : Fragment() {
 
@@ -29,10 +31,10 @@ class DetailFilmFragment : Fragment() {
     companion object {
 
         @JvmStatic
-        fun newInstance() =
+        fun newInstance(imdbID: String) =
             DetailFilmFragment().apply {
                 arguments = Bundle().apply {
-
+                    putString(ARG_IMDB_ID, imdbID)
                 }
             }
     }

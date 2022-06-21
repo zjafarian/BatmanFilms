@@ -11,14 +11,19 @@ class DetailFilmActivity : SingleFragmentActivity() {
 
 
     companion object {
+        private const val EXTRA_IMDB_ID = "com.example.joyapp.imdbId"
+
 
         // this function use DetailFilmActivity by Intent
-        public fun newIntent(context: Context): Intent {
-            return Intent(context, DetailFilmActivity::class.java)
+        public fun newIntent(context: Context, imdbID : String): Intent {
+            val intent = Intent(context, DetailFilmActivity::class.java)
+            intent.putExtra(EXTRA_IMDB_ID,imdbID)
+            return intent
         }
     }
     override fun createFragment(): Fragment? {
-        return DetailFilmFragment.newInstance()
+        val imdbId = intent.getStringExtra(EXTRA_IMDB_ID)
+        return DetailFilmFragment.newInstance(imdbId)
     }
 
 }
