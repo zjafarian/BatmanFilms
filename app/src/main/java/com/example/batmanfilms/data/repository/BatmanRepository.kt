@@ -19,6 +19,8 @@ object BatmanRepository {
     //value of detialFilm
     val detailBatmanFilm = MutableLiveData<ResponseFilm>()
 
+    val resultResponse = MutableLiveData<Boolean>()
+
 
     //this function is for getting list of batman films
     fun fetchGetBatmanFilmsList() {
@@ -30,6 +32,10 @@ object BatmanRepository {
                 .fetchGetListFilms(
                     NetworkParams.API_KEY,
                     NetworkParams.SEARCH_BATMAN_FILM)
+
+            if (response.code() == 200)
+                resultResponse.postValue(true)
+            else resultResponse.postValue(false)
 
             //set filmsItem from body in mutableLiveData
             response.body()?.search?.let { searchItems ->

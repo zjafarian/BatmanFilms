@@ -8,9 +8,6 @@ import com.example.batmanfilms.models.SearchItem
 class BatmanViewModel : ViewModel() {
     val batmanFilms = BatmanRepository.batmanFilmsList as LiveData<ArrayList<SearchItem>>
 
-    fun fetchGetBatmanFilms(){
-        BatmanRepository.fetchGetBatmanFilmsList()
-    }
 
 
 }
