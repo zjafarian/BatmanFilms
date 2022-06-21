@@ -32,7 +32,7 @@ class BatmanFragment : Fragment() {
 
         }
 
-        batmanVM.fetchGetBatmanFilms()
+
     }
 
     override fun onCreateView(
