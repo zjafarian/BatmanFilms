@@ -1,5 +1,6 @@
 package com.example.batmanfilms.data.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.batmanfilms.data.network.NetworkParams
@@ -33,6 +34,8 @@ object BatmanRepository {
                     NetworkParams.API_KEY,
                     NetworkParams.SEARCH_BATMAN_FILM)
 
+            Log.d("repository",response.code().toString())
+
             if (response.code() == 200)
                 resultResponse.postValue(true)
             else resultResponse.postValue(false)
@@ -56,6 +59,8 @@ object BatmanRepository {
             val response = RetrofitClientInstance
                 .retrofitService
                 .fetchGetFilm(NetworkParams.API_KEY,id)
+
+            Log.d("repository",response.body().toString())
 
 
             //set detail of every film in mutableLiveData

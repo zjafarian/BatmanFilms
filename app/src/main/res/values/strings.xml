@@ -2,8 +2,8 @@
     <string name="app_name">BatmanFilms</string>
     <string name="rent">Rent from R29.99</string>
     <string name="buy">Buy from R129.99</string>
-    <string name="template_movie_details">March 2017 PG 129 minutes</string>
-    <string name="template_movie_title">Beauty and the Beast</string>
+    <string name="template_movie_released">15 Jun 2005</string>
+    <string name="template_movie_title">Batman Begins</string>
     <string name="template_movie_genre">Family</string>
     <string name="template_rotten_tomato_rating">71%</string>
     <string name="template_similar">Similar</string>
