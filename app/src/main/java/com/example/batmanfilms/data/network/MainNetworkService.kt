@@ -5,17 +5,22 @@ import com.example.batmanfilms.models.ResponseFilm
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface MainNetworkService {
 
     //get list of batman films
-    @GET("${NetworkParams.SEARCH_PARAM}{s}")
-    suspend fun fetchGetListFilms(@Path("s") filmName: String) : Response<ResponseBatmanSearch>
+    @GET(".")
+    suspend fun fetchGetListFilms(
+        @Query("apikey") apiKey: String,
+        @Query("s") search: String
+    ): Response<ResponseBatmanSearch>
 
 
     //get detail of every film (batman)
-    @GET("${NetworkParams.GET_FILM_PARAM}{i}")
-    suspend fun fetchGetFilm(@Path("i") filmId: String) : Response<ResponseFilm>
+    @GET(".")
+    suspend fun fetchGetFilm( @Query("apikey") apiKey: String,
+                              @Query("i") imdbID: String): Response<ResponseFilm>
 
 
 }

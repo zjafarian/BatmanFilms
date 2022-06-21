@@ -19,6 +19,8 @@ object BatmanRepository {
     //value of detialFilm
     val detailBatmanFilm = MutableLiveData<ResponseFilm>()
 
+    val resultResponse = MutableLiveData<Boolean>()
+
 
     //this function is for getting list of batman films
     fun fetchGetBatmanFilmsList() {
@@ -27,7 +29,13 @@ object BatmanRepository {
             //connect to server and get list of batman films
             val response = RetrofitClientInstance
                 .retrofitService
-                .fetchGetListFilms(NetworkParams.SEARCH_BATMAN_FILM)
+                .fetchGetListFilms(
+                    NetworkParams.API_KEY,
+                    NetworkParams.SEARCH_BATMAN_FILM)
+
+            if (response.code() == 200)
+                resultResponse.postValue(true)
+            else resultResponse.postValue(false)
 
             //set filmsItem from body in mutableLiveData
             response.body()?.search?.let { searchItems ->
@@ -40,17 +48,18 @@ object BatmanRepository {
     }
 
 
-
     //this function is for getting detail of every film
-    fun fetchGetDetailOfFilm(id : String) {
-       CoroutineScope(Dispatchers.IO).launch {
+    fun fetchGetDetailOfFilm(id: String) {
+        CoroutineScope(Dispatchers.IO).launch {
 
-           //connect to server and get detail of batman films
-           val response = RetrofitClientInstance.retrofitService.fetchGetFilm(id)
+            //connect to server and get detail of batman films
+            val response = RetrofitClientInstance
+                .retrofitService
+                .fetchGetFilm(NetworkParams.API_KEY,id)
 
 
-           //set detail of every film in mutableLiveData
-           detailBatmanFilm.postValue(response.body())
-       }
+            //set detail of every film in mutableLiveData
+            detailBatmanFilm.postValue(response.body())
+        }
     }
 }
