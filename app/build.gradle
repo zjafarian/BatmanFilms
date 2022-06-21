@@ -70,6 +70,9 @@ dependencies {
     // A powerful image downloading and caching library for Android
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    // Circular image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 
     def lottieVersion = "3.4.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"

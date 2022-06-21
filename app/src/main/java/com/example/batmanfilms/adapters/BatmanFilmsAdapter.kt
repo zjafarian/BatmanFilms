@@ -35,9 +35,12 @@ class BatmanFilmsAdapter : ListAdapter<SearchItem,
 
     override fun onBindViewHolder(holder: BatmanFilmHolder, position: Int) {
         bindView(getItem(position), holder)
-        holder.bindingInput.root.setOnClickListener {
+
+        holder.itemView.setOnClickListener {
             clickFilm?.onCLickFilm(getItem(position))
         }
+
+
     }
 
     private fun bindView(
